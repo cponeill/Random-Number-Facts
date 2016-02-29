@@ -7,7 +7,7 @@ info:
    description: Get a random fact about a year chosen randomly.
    termsOfService: https://opensource.org/licenses/MIT
    x-21-usage: 'Send request to server to get random fact about a random year. Request consumes JSON object with format {"text": text, "number": <year>}, and returns JSON object with format {"text": <text>, "number": <year>}'
-   x-21-quick-buy: "wget -O client-random.py http://73.170.35.214:5000/client \npython3 server-random.py http://73.170.35.214:5000"
+   x-21-quick-buy: "wget -O client.py http://10.244.189.126:5000/client \npython3 client.py http://10.244.189.126:5000"
    x-21-category: entertainment
    x-21-total-price:
      min: 5000
@@ -15,7 +15,7 @@ info:
    contact:
      name: 'cponeill'
      email: caseyoneill78@hotmail.com
-     url: https://cponeill.com
+     url: https://21.co
    license:
      name: MIT LICENSE
      url: https://opensource.org/licenses/MIT
