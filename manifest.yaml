@@ -6,9 +6,9 @@ info:
    title: Get a Random Fact
    description: Get a random fact about a year chosen randomly.
    termsOfService: https://opensource.org/licenses/MIT
-   x-21-usage: 'Send POST request to server to get sentiment score of text. Request consumes JSON object with format {"text": <string to get sentiment>}, and returns JSON object with format {"sentiment": <sentiment score>}'
+   x-21-usage: 'Send request to server to get random fact about a random year. Request consumes JSON object with format {"text": text, "number": <year>}, and returns JSON object with format {"text": <text>, "number": <year>}'
    x-21-quick-buy: "wget -O client-random.py http://73.170.35.214:5000/client \npython3 server-random.py http://73.170.35.214:5000"
-   x-21-category: utilities
+   x-21-category: entertainment
    x-21-total-price:
      min: 5000
      max: 5000
@@ -33,14 +33,14 @@ info:
  paths:
    /analyze:
      post:
-       summary: Gets sentiment score of text passed as utf-8 encoded plaintext.
+       summary: Gets a random fact of text passed as utf-8 encoded plaintext.
        consumes:
          - application/json
        produces:
          - application/json
        parameters:
          - name: body
-           description: string for which to get sentiment score
+           description: string for which to get random text
            in: body
            required: true
            schema:
@@ -50,7 +50,7 @@ info:
                  type: string
        responses:
          200:
-           description: sentiment score
+           description: random fact
            schema:
              type: object
              properties:
