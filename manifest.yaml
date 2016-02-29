@@ -24,7 +24,7 @@ info:
      - year
      - fact
    version: '0.1'
- host: 73.170.35.214:5000
+ host: 10.244.189.126:5000
  schemes:
    - http
  basePath: /
