@@ -1,0 +1,81 @@
+# You can edit this file at editor.swagger.io.
+swagger: '2.0'
+info:
+   x-21-github-profile-url: http://github.io
+   x-21-github-project-url: http://github.io
+   title: Get a Random Fact
+   description: Get a random fact about a year chosen randomly.
+   termsOfService: https://opensource.org/licenses/MIT
+   x-21-usage: 'Send POST request to server to get sentiment score of text. Request consumes JSON object with format {"text": <string to get sentiment>}, and returns JSON object with format {"sentiment": <sentiment score>}'
+   x-21-quick-buy: "wget -O client-random.py http://73.170.35.214:5000/client \npython3 server-random.py http://73.170.35.214:5000"
+   x-21-category: utilities
+   x-21-total-price:
+     min: 5000
+     max: 5000
+   contact:
+     name: 'cponeill'
+     email: caseyoneill78@hotmail.com
+     url: https://cponeill.com
+   license:
+     name: MIT LICENSE
+     url: https://opensource.org/licenses/MIT
+   x-21-keywords:
+     - random
+     - year
+     - fact
+   version: '0.1'
+ host: 73.170.35.214:5000
+ schemes:
+   - http
+ basePath: /
+ x-21-manifest-path: /manifest
+ x-21-healthcheck-path: /healthcheck
+ paths:
+   /analyze:
+     post:
+       summary: Gets sentiment score of text passed as utf-8 encoded plaintext.
+       consumes:
+         - application/json
+       produces:
+         - application/json
+       parameters:
+         - name: body
+           description: string for which to get sentiment score
+           in: body
+           required: true
+           schema:
+             type: object
+             properties:
+               text:
+                 type: string
+       responses:
+         200:
+           description: sentiment score
+           schema:
+             type: object
+             properties:
+               score:
+                 type: number
+                 format: float
+         400:
+           description: invalid input
+           schema:
+             type: object
+             properties:
+                error_message:
+                 type: string
+         500:
+           description: error processing request
+           schema:
+             type: object
+             properties:
+               error_message:
+                 type: string
+   /client:
+     get:
+       summary: Returns example client script.
+       responses:
+         200:
+           description: client file
+           schema:
+             type: string
