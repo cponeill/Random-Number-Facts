@@ -19,8 +19,8 @@ def get_answer(host):
     return to_return
 
 if __name__=='__main__':
-	parser = argparse.ArgumentParser(description='Get the random fact of the day')
-	parser.add_argument('host', type=str, help='address of server hosting randomfact program')
+    parser = argparse.ArgumentParser(description='Get the random fact of the day')
+    parser.add_argument('host', type=str, help='address of server hosting randomfact program')
 
     parser.add_argument('--test', help='unit test for randomfact server', action='store_true')
     args = parser.parse_args()
