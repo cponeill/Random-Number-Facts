@@ -8,8 +8,7 @@ username = Config().username
 requests = BitTransferRequests(wallet, username)
 
 def get_answer(host):
-	server_url = host + '/randomfact'
-
+    server_url = host + '/randomfact'
     # Tell the client they are about to learn a random fact.
     print("Welcome to the RANDOM FACT OF THE DAY!\n")
     response = requests.get(url=server_url)
